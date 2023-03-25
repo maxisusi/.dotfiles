@@ -1,0 +1,25 @@
+[user]
+	signingkey = 
+	name = 
+	email = 
+
+[gpg]
+	format = ssh
+
+[gpg "ssh"]
+	program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[sequence]
+	editor = rebase-editor
+
+[commit]
+	gpgsign = true
+
+[core]
+	editor = vim
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
