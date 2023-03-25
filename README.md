@@ -1,5 +1,8 @@
-# Max's development environment
+# 🤖 Automated Development Environment
 This repos is my current dev environment automatically setup with Ansible Playbook.
+My goal is to easily switch from a computer to another and have all my .dotfiles, softwares ready to go.
+
+This environment supports **MacOSX** and **Debian distributions**. (RIP Windows ⚰️)
 
 ### 🏁 Starting point
 In `/bin` you can run the `.dotfiles` to generate and configure an SSH key for ansible and download
