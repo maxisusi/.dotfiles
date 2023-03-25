@@ -32,5 +32,5 @@ cd "$DOTFILES_DIR"
 if [[ -f "$DOTFILES_DIR/vault-password.txt" ]]; then
   ansible-playbook --diff --vault-password-file "$DOTFILES_DIR/vault-password.txt" "$DOTFILES_DIR/main.yml"
 else
-  ansible-playbook --diff "$DOTFILES_DIR/main.yml"
+  ansible-playbook --diff --extra-vars "@$DOTFILES_DIR/values.yml" "$DOTFILES_DIR/main.yml" "$@"
 fi

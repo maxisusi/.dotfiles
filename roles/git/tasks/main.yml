@@ -4,7 +4,52 @@
     name:
       - git
     state: latest
-  become: true
+  become: false 
+  when: ansible_os_family == "MacOSX"
+
+- name: Install
+  ansible.builtin.package:
+    name:
+      - git
+    state: latest
+  become: false 
+  when: ansible_os_family == "Debian"
+
+- name: Set signinkey
+  community.general.git_config:
+    name: user.signingkey
+    scope: global
+    value: "{{ git_user_signinkey }}"
+
+- name: Set user.name
+  community.general.git_config:
+    name: user.name
+    scope: global
+    value: "{{ git_user_name }}"
+
+- name: Set user.email
+  community.general.git_config:
+    name: user.email
+    scope: global
+    value: "{{ git_user_email }}"
+
+- name: Set gpg.format
+  community.general.git_config:
+    name: gpg.format
+    scope: global
+    value: ssh
+
+- name: Set commit.sign
+  community.general.git_config:
+    name: commit.gpgsign
+    scope: global
+    value: true
+
+- name: Set editor
+  community.general.git_config:
+    name: core.editor
+    scope: global
+    value: vim
 
 - name: Set init.defaultBranch
   community.general.git_config:
@@ -18,15 +63,3 @@
     scope: global
     value: true
 
-- name: Set user.email
-  community.general.git_config:
-    name: user.email
-    scope: global
-    value: "{{ git_user_email }}"
-  no_log: true
-
-- name: Set user.name
-  community.general.git_config:
-    name: user.name
-    scope: global
-    value: "{{ git_user_name }}"
