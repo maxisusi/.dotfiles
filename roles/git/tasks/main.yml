@@ -5,7 +5,7 @@
       - git
     state: latest
   become: false 
-  when: ansible_os_family == "MacOSX"
+  when: ansible_distribution == "MacOSX"
 
 - name: Install
   ansible.builtin.package:
@@ -13,13 +13,13 @@
       - git
     state: latest
   become: false 
-  when: ansible_os_family == "Debian"
+  when: ansible_distribution == "Debian"
 
 - name: Install Rebase-Editor
   community.general.npm:
     name: rebase-editor
     global: true
-  become: true
+  become: false
 
 - name: Copy .gitconfig
   ansible.builtin.template:

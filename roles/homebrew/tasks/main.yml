@@ -21,3 +21,42 @@
     path: /tmp/homebrew-install.sh
     state: absent
   when: not install.stat.exists
+
+- name: Install Homebrew packages
+  community.general.homebrew:
+    name: 
+      - git
+      - bat
+      - exa
+      - fd
+      - fzf
+      - git
+      - jq
+      - make
+      - neovim
+      - nmap 
+      - node
+      - nvm 
+      - procs
+      - ripgrep
+      - tokei
+      - tree
+      - yarn
+      - python@3.10
+    state: latest
+  ignore_errors: true
+
+    
+- name: Install Homebrew casks
+  community.general.homebrew_cask:
+    name: 
+      - alfred
+      - docker
+      - google-chrome
+      - slack
+      - visual-studio-code
+      - warp
+      - 1password
+    state: latest
+  ignore_errors: true
+  when: ansible_distribution == "MacOSX"
