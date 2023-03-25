@@ -57,7 +57,7 @@ alias gcfb="git cherry -v"
 alias gpl="git pull"
 
 # Brew
-alias brewd="brew bundle dump --file=~/dotfile/ --force"
+alias brewd="brew bundle dump --file=~/.dotfile/roles/files/Brewfile --force"
 
 # Gammadia
 alias mu="make up"
