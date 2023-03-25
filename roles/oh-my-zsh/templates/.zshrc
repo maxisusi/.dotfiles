@@ -29,7 +29,7 @@ export ZSH="/Users/maxbalej/.oh-my-zsh"
 ## PLUGINS 
 #-------------------------------
 
-plugins=(git)
+plugins=(git zsh-autosuggestions zsh-completions zsh-syntax-highlighting z)
 source $ZSH/oh-my-zsh.sh
 
 #-------------------------------
