@@ -1,0 +1,18 @@
+- name: Download Homebrew 
+  get_url:
+    validate_certs: false
+    dest: /tmp/homebrew-install.sh
+    mode: 0755
+    url: https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh 
+
+- name: Execute homebrew-install.sh
+  shell: /tmp/homebrew-install.sh
+
+- name: Remove homebrew-install.sh
+  file:
+    path: /tmp/homebrew-install.sh
+    state: absent
+
+- name: Install apps from Homebrew bundle
+  shell: brew bundle --file=/Users/{{ ansible_user_id }}/.dotfiles/roles/homebrew/files/Brewfile && brew link --overwrite node
+  
