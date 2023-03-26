@@ -2,6 +2,7 @@
 - hosts: localhost
   connection: local
   roles:
+    - git
     - homebrew
     - oh-my-zsh
-    - git
+    

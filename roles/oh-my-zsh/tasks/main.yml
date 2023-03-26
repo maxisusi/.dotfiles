@@ -4,6 +4,13 @@
     path: "{{ ansible_user_dir }}/.oh-my-zsh"
   register: install
 
+- name: Download ZSH
+  ansible.builtin.package:
+    name:
+      - zsh
+    state: latest
+  become: false
+  
 - name: Download oh-my-zsh
   get_url:
     dest: /tmp/zsh-install.sh
@@ -32,7 +39,6 @@
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-autosuggestions"
     repo: https://github.com/zsh-users/zsh-autosuggestions
-    single_branch: yes
     update: yes
     version: master
 
@@ -42,7 +48,6 @@
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-completions"
     repo: https://github.com/zsh-users/zsh-completions
-    single_branch: yes
     update: yes
     version: master
 
@@ -52,7 +57,6 @@
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"
     repo: https://github.com/zsh-users/zsh-syntax-highlighting
-    single_branch: yes
     update: yes
     version: master
 
@@ -62,5 +66,4 @@
     depth: 1
     dest: "{{ ansible_user_dir }}/.oh-my-zsh/custom/plugins/zsh-z"
     repo: https://github.com/agkozak/zsh-z
-    single_branch: yes
     update: yes

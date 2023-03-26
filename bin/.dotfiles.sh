@@ -4,6 +4,10 @@ set -e
 DOTFILES_DIR="$HOME/.dotfiles"
 SSH_DIR="$HOME/.ssh"
 
+if ! [ -x "$(command -v curl)" ]; then
+  apt install curl -y
+fi
+
 if ! [ -x "$(command -v ansible)" ]; then
   apt install ansible
 fi

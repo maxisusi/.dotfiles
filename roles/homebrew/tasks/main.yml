@@ -25,7 +25,7 @@
 - name: Install Homebrew packages
   community.general.homebrew:
     name: 
-      - git
+      - gi
       - bat
       - exa
       - fd
@@ -44,6 +44,8 @@
       - yarn
       - python@3.10
     state: latest
+    install_options:
+      -  
   ignore_errors: true
 
     
