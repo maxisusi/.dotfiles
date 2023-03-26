@@ -6,11 +6,18 @@
   vars_files:
     - default.config.yml
   roles:
+    # Install OMZSH + Zsh 
     - role: ansible-role-oh-my-zsh
       users: 
         - username: maxbalej
+    
+    # Install Homebrew on Linux
     - role: monolithprojects.homebrew
       when: ansible_distribution != "MacOSX"
+    
+    # Install Homebrew on MacOS
     - role: geerlingguy.mac.homebrew
+
+    # Install git and .gitconfig
     - role: git
 
