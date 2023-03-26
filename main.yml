@@ -2,13 +2,14 @@
 - hosts: localhost
   connection: local
   become: true
-
   vars_files:
     - default.config.yml
-
   roles:
     - role: ansible-role-oh-my-zsh
       users: 
         - username: maxbalej
+    - role: monolithprojects.homebrew
+      when: ansible_distribution != "MacOSX"
+    - role: git
       
 
