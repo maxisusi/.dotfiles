@@ -25,3 +25,26 @@ oh_my_zsh_aliases:
   - alias mr="make restart"
   - alias mtr="make test react"
 
+homebrew_installed_packages:
+  - node
+  - nvm
+  - redis
+  - ssh-copy-id
+  - pv
+  - bat
+  - exa
+  - make
+
+homebrew_cask_apps:
+  - firefox
+  - vlc
+
+brew_formulae: 
+  - node
+  - nvm
+  - redis
+  - ssh-copy-id
+  - pv
+  - bat
+  - exa
+  - make
