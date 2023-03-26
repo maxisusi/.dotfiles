@@ -34,10 +34,23 @@ homebrew_installed_packages:
   - bat
   - exa
   - make
+  - yarn
+  - neovim
+  - procs
+  - ripgrep
+  - tokei
+  - jq
+  - fd
+  - nmap
+  - python@3.10
 
 homebrew_cask_apps:
-  - firefox
-  - vlc
+  - google-chrome
+  - 1password
+  - slack
+  - visual-studio-code
+  - google-cloud-sdk
+  - warp
 
 brew_formulae: 
   - node
@@ -48,3 +61,17 @@ brew_formulae:
   - bat
   - exa
   - make
+  - yarn
+  - neovim
+  - procs
+  - ripgrep
+  - tokei
+  - jq
+  - fd
+  - nmap 
+  - python@3.10
+  - google-chrome
+  - 1password
+  - slack
+  - visual-studio-code
+  - google-cloud-sdk
