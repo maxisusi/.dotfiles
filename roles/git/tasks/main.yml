@@ -6,22 +6,10 @@
     state: latest
   become: false 
 
-# - name: Install Rebase-Editor
-#   community.general.npm:
-#     name: rebase-editor
-#     global: true
-#   become: false
-
 - name: Copy .gitconfig
   ansible.builtin.template:
     dest: "{{ ansible_user_dir }}/.gitconfig"
     src: .gitconfig
-
-- name: Set signinkey
-  community.general.git_config:
-    name: user.signingkey
-    scope: global
-    value: "{{ git_user_signinkey }}"
 
 - name: Set user.name
   community.general.git_config:
