@@ -43,6 +43,7 @@ homebrew_installed_packages:
   - fd
   - nmap
   - python@3.10
+  - tree
 
 homebrew_cask_apps:
   - google-chrome
@@ -51,6 +52,7 @@ homebrew_cask_apps:
   - visual-studio-code
   - google-cloud-sdk
   - warp
+  - alfred
 
 brew_formulae: 
   - node
@@ -70,6 +72,7 @@ brew_formulae:
   - fd
   - nmap 
   - python@3.10
+  - tree
   - google-chrome
   - 1password
   - slack
