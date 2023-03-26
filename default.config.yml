@@ -1,0 +1,27 @@
+oh_my_zsh_plugins:
+  - git
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+  - zsh-completions
+  - zsh-z
+
+oh_my_zsh_aliases:
+  - alias zshconfig="vim ~/.zshrc"
+  - alias ohmyzsh="vim  ~/.oh-my-zsh"
+  - alias cat="bat"
+  - alias ls="exa"
+  - alias k="kubectl"
+  - alias dps="docker ps"
+  - alias di="docker inspect"
+  - alias dimg="docker images"
+  - alias gaa="git add ."
+  - alias gap="git add -p"
+  - alias gs="git status"
+  - alias gp="git push"
+  - alias gcfb="git cherry -v"
+  - alias gpl="git pull"
+  - alias mu="make up"
+  - alias md="make down"
+  - alias mr="make restart"
+  - alias mtr="make test react"
+

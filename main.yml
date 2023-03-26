@@ -1,8 +1,14 @@
 ---
 - hosts: localhost
   connection: local
+  become: true
+
+  vars_files:
+    - default.config.yml
+
   roles:
-    - git
-    - homebrew
-    - oh-my-zsh
-    
+    - role: ansible-role-oh-my-zsh
+      users: 
+        - username: maxbalej
+      
+
